@@ -183,6 +183,15 @@ namespace ClassesMetier
             // return mesPrestations.Select(x => DateTime.Parse(x.GetDateSoin())).Distinct().Count();
             return this.MesPrestations.Select(x => x.DateHeureSoin.Date).Distinct().Count();
         }
+        /// <summary>
+        /// Cette méthode retourne la dernière prestation de la liste
+        /// </summary>
+        /// <returns>Une prestation</returns>
+        public Prestation DernierePrestation()
+        {
+            int i = this.MesPrestations.Count();
+            return this.MesPrestations[i];
+        }
 
         /// <inheritdoc/>
         public override string ToString()
